@@ -1,0 +1,48 @@
+.results-video {
+    width: 50vw;
+    height: 100vh;
+    object-fit: cover;
+}
+.results-content {
+    margin-top: 30vh;
+    position:absolute;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    color: whitesmoke;
+}
+.tracks-text {
+    margin-left: 2vh;
+    text-align:left;
+    font-size:7vmax;
+    margin-top: 30vh;
+    display: inline;   
+}
+.artists-text {
+    margin-right: 2vh;
+    text-align: right;
+    font-size: 7vmax;
+    float: right;
+    color: whitesmoke;
+}
+.left-text {
+    margin-bottom: 0px;
+    margin-left: 2vh;
+    display: inline;
+}
+.right-text {
+    float: right;
+    text-align: right;
+    margin-right: 2vh;
+}
+a {
+    color: whitesmoke
+}
+.logout {
+    margin-top: 0vh;
+    position:absolute;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    color: whitesmoke;
+}
