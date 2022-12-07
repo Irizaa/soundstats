@@ -29,11 +29,13 @@ app.get("/login", (req, res) => {
 })
 
 app.get("/callback", (req, res) => {
-    const code = req.query.code
-    
-    if(req.query.state!= state) {
-        res.status(400).end("ERROR: State Mismatch")
+
+    if(req.query.state!= state || req.query.error) {
+        res.redirect('http://localhost:3000')
+        return
     }
+    const code = req.query.code
+
     axios({
         method: 'post',
         url: 'https://accounts.spotify.com/api/token',
