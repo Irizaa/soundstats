@@ -8,13 +8,13 @@ export const setAccessToken = () => {
         localStorage.setItem('accessToken', urlParams.get('access_token'))
         localStorage.setItem('refreshToken', urlParams.get('refresh_token'))
         localStorage.setItem('expiresIn', urlParams.get('expires_in'))
+        localStorage.setItem('timestamp', Date.now())
     }
     if(localStorage.getItem('accessToken') == null || localStorage.getItem('refreshToken') == null) {
         window.location.href = 'http://localhost:3000/'
     }
     axios.defaults.headers['Authorization'] = `Bearer ${localStorage.getItem('accessToken')}`
 }
-
 
 axios.defaults.baseURL = 'https://api.spotify.com/v1/'
 

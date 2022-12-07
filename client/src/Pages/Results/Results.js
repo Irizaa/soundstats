@@ -6,10 +6,12 @@ import BGPiano from '../../Assets/BGPiano.mp4'
 import Navbar from '../../Components/Navbar';
 
 const Results = () => {
-
+    console.log(localStorage.getItem('timestamp'))
     useEffect(() => {
       setAccessToken()
+      window.history.pushState('','', '/results')
     }, [])
+    
     
     return (
       <>

@@ -4,6 +4,7 @@ import BGVideo from '../../Assets/BGVideo.mp4'
 import button from '../../Assets/spotifybutton.png'
 
 const Home = () => {
+  
   return (
     <>
       <div className = "overlay"/>
