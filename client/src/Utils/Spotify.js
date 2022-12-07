@@ -1,20 +1,36 @@
 import axios from "axios"
 
+
 export const setAccessToken = () => {
 
     const queryString = window.location.search
     const urlParams = new URLSearchParams(queryString)
+
+    // User is entering application for the first time. Access & Refresh tokens are set, along with a timelimit used for refreshes.
     if(urlParams.has('access_token') && urlParams.has('refresh_token')) {
         localStorage.setItem('accessToken', urlParams.get('access_token'))
         localStorage.setItem('refreshToken', urlParams.get('refresh_token'))
-        localStorage.setItem('expiresIn', urlParams.get('expires_in'))
-        localStorage.setItem('timestamp', Date.now())
+        localStorage.setItem('timeLimit', (Date.now() / 1000) + 3600)
+    }
+    // When token has expired, set new access token and update time limit.
+    if((Date.now() / 1000) > localStorage.getItem('timeLimit')) {
+        axios.get(`http://localhost:3001/refreshtoken?refreshtoken=${localStorage.getItem('refreshToken')}`)
+        .then(response => {
+            localStorage.setItem('accessToken', response)
+            localStorage.setItem('timeLimit', Date.now() / 1000)
+        })
+        .catch(error => {
+            return error
+        })
     }
     if(localStorage.getItem('accessToken') == null || localStorage.getItem('refreshToken') == null) {
         window.location.href = 'http://localhost:3000/'
     }
+    
     axios.defaults.headers['Authorization'] = `Bearer ${localStorage.getItem('accessToken')}`
 }
+
+
 
 axios.defaults.baseURL = 'https://api.spotify.com/v1/'
 
