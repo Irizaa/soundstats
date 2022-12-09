@@ -14,7 +14,7 @@ const Tracks = () => {
   setAccessToken()
   return (
     <div className = "tracks-body">
-      
+      <Navbar/>
     </div>
   )
 }
