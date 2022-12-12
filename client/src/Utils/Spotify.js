@@ -17,7 +17,7 @@ export const setAccessToken = () => {
         axios.get(`http://localhost:3001/refreshtoken?refreshtoken=${localStorage.getItem('refreshToken')}`)
         .then(response => {
             localStorage.setItem('accessToken', response)
-            localStorage.setItem('timeLimit', Date.now() / 1000)
+            localStorage.setItem('timeLimit', Date.now() / 1000 + 3600)
         })
         .catch(error => {
             return error
