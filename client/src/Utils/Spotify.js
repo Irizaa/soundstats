@@ -3,8 +3,7 @@ import axios from "axios"
 
 export const setAccessToken = () => {
 
-    const queryString = window.location.search
-    const urlParams = new URLSearchParams(queryString)
+    const urlParams = new URLSearchParams(window.location.search)
 
     // User is entering application for the first time. Access & Refresh tokens are set, along with a timelimit used for refreshes.
     if(urlParams.has('access_token') && urlParams.has('refresh_token')) {
@@ -14,9 +13,9 @@ export const setAccessToken = () => {
     }
     // When token has expired, set new access token and update time limit.
     if((Date.now() / 1000) > localStorage.getItem('timeLimit')) {
-        axios.get(`http://localhost:3001/refreshtoken?refreshtoken=${localStorage.getItem('refreshToken')}`)
+        axios.get(`http://localhost:3001/refresh_token?refresh_token=${localStorage.getItem('refreshToken')},`, )
         .then(response => {
-            localStorage.setItem('accessToken', response)
+            localStorage.setItem('accessToken', response.data.access_token)
             localStorage.setItem('timeLimit', Date.now() / 1000 + 3600)
         })
         .catch(error => {
@@ -39,12 +38,13 @@ export const logOut = () => {
     window.location.href = 'http://localhost:3000'
 }
 
-export const getTop =  (type) => {
+export const getTop =  (type, range) => {
     return (axios({
         method: 'get',
         url: `me/top/${type}`,
         params: {
-            limit: 50
+            limit: 50,
+            time_range: range
         }
     })
     )

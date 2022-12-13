@@ -58,6 +58,8 @@ app.get("/callback", (req, res) => {
 })
 
 app.get('/refresh_token', (req, res) => {
+    res.setHeader('Access-Control-Allow-Origin', 'http://localhost:3000');
+    
     const refresh_token = req.query.refresh_token
     axios({
         method: 'post',
@@ -72,7 +74,7 @@ app.get('/refresh_token', (req, res) => {
         }
     })
     .then(response => {
-        res.send(response.data.access_token)
+        res.send(response)
     })
     .catch(error => {
         res.send(error)
