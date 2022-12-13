@@ -35,6 +35,7 @@ axios.defaults.baseURL = 'https://api.spotify.com/v1/'
 
 export const logOut = () => {
     localStorage.clear()
+    sessionStorage.clear()
     window.location.href = 'http://localhost:3000'
 }
 

@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react'
 import Navbar from '../../../../Components/Navbar'
 import { setAccessToken } from '../../../../Utils/Spotify'
 import { getTop } from '../../../../Utils/Spotify'
+import RangeSelector from '../../../../Components/RangeSelector/'
 
 const Tracks = () => {
   const [trackData, setTrackData] = useState(null)
@@ -18,7 +19,7 @@ const Tracks = () => {
 
   useEffect(() => {
     setAccessToken()
-    
+
     const urlParams = new URLSearchParams(window.location.search)
     let timeRange = urlParams.get('time_range')
     if(urlParams.get('time_range') === null) timeRange = 'short_term'
@@ -34,7 +35,8 @@ const Tracks = () => {
 
     <div className = "tracks-body">
       <Navbar/>
-      <img src = {trackData?.items[0].album.images[1].url} alt = {trackData?.items[0].name}></img>
+      <RangeSelector/>
+      {/* <img src = {trackData?.items[0].album.images[1].url} alt = {trackData?.items[0].name}></img> */}
     </div>
   )
 }
