@@ -1,23 +1,34 @@
 import React from 'react'
 import './RangeSelector.css'
-import { useEffect} from 'react'
-
+import { useEffect, useState } from 'react'
 
 const RangeSelector = () => {
+  const [timePeriod, setTimePeriod] = useState("short_term")
 
   const changeRange = (range) => {
-    window.location.href = `/results/${window.location.pathname.split('/')[2]}?time_range=${range}`
+    window.location = `/results/${window.location.pathname.split('/')[2]}?time_range=${range}`
   }
   useEffect(() => {
 
+    document.getElementById('mobile-range-selector').addEventListener('change', function() {
+      changeRange(this.value)
+    })
     const urlParams = new URLSearchParams(window.location.search)
     let timeRange = urlParams.get('time_range')
     if(urlParams.get('time_range') === null) timeRange = 'short_term'
     document.getElementById(timeRange).style.color =  'whitesmoke'
+    setTimePeriod(timeRange)
   }, [])
 
   return (
-    <nav className = "navbar">   
+    <>
+      <select id= "mobile-range-selector" value={timePeriod}>
+        <option value="short_term">Past 4 weeks</option>
+        <option value="medium_term">Past 6 months</option>
+        <option value="long_term">All-time</option>
+      </select>
+
+      <nav className = "navbar">   
         <ul id = "monitor-range-selector">
           <li id = "short_term" onClick={() => {changeRange('short_term')}}>
             last 4 weeks
@@ -29,7 +40,8 @@ const RangeSelector = () => {
             all-time
           </li>
         </ul>
-    </nav>
+      </nav>
+    </>
 )
 }
 

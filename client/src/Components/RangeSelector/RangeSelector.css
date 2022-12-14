@@ -3,16 +3,32 @@
     text-align: center;
 }
 #short_term {
-    margin-left: 34vw;
+    margin-left: 32vw;
 }
 .navbar li {
     margin-right: 2vw;
     display: inline;
     cursor: pointer;
-    font-size: 25px;
+    font-size: 30px;
 }
-@media(max-width: 450px) {
+select {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 18px;
+    padding: 10px;
+    width: 100%;
+    height: 8vh;
+    background: #ff7373
+}
+#mobile-range-selector {
+    display: none;
+}
+
+  @media(max-width: 450px) {
     #monitor-range-selector {
         display: none;
+    }
+    #mobile-range-selector {
+        display: block;
     }
 }
