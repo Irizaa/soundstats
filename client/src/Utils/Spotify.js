@@ -50,3 +50,10 @@ export const getTop =  (type, range) => {
     })
     )
 }
+export const fetchResults = async (type, range) => {   
+    await getTop(type, range)
+    .then(response => {  
+      sessionStorage.setItem(`${range}_${type}`, JSON.stringify(response.data))
+    })
+    .catch(error => console.log(error))
+  }

@@ -42,7 +42,7 @@ const RangeSelector = () => {
         </ul>
       </nav>
     </>
-)
+  )
 }
 
 
