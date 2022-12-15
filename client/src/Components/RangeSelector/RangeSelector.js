@@ -1,23 +1,26 @@
 import React from 'react'
 import './RangeSelector.css'
 import { useEffect, useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 
 const RangeSelector = () => {
   const [timePeriod, setTimePeriod] = useState("short_term")
+  const navigate = useNavigate()
 
   const changeRange = (range) => {
-    window.location = `/results/${window.location.pathname.split('/')[2]}?time_range=${range}`
+    navigate(`?time_range=${range}`)
+    const urlParams = new URLSearchParams(window.location.search)
+    let timeRange = urlParams.get('time_range')
+    if(urlParams.get('time_range') === null) timeRange = 'short_term'
+    document.getElementById(timePeriod).style.color =  '#818589'
+    setTimePeriod(timeRange)
+    // window.location = `/results/${window.location.pathname.split('/')[2]}?time_range=${range}`
   }
   useEffect(() => {
 
     document.getElementById('mobile-range-selector').addEventListener('change', function() {
       changeRange(this.value)
     })
-    const urlParams = new URLSearchParams(window.location.search)
-    let timeRange = urlParams.get('time_range')
-    if(urlParams.get('time_range') === null) timeRange = 'short_term'
-    document.getElementById(timeRange).style.color =  'whitesmoke'
-    setTimePeriod(timeRange)
   }, [])
 
   return (

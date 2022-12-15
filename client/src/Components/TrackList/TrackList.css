@@ -1,18 +1,36 @@
-p, h3 {
+p {
     color: whitesmoke;
-    margin-left: 5vw;
-}
-h3 {
-    margin-top: 3vh;
-    margin-right: 3vh;
+    margin-left: 10vw;
 }
 #top-songs {
+    margin-left: 3vw;
     width: 95%;
+    margin-top: 5vh;
     margin-bottom: 3vh;
-    margin-right: 10vw;
     height: 75vh;
     overflow-y: scroll;
 }
+#song-box {
+  display: flex;
+  margin-bottom:1vh;
+  background: #212121
+}
+#track-image {
+  align-items: center;
+  width: 175px;
+  height: 175px;
+}
+#song-name {
+  width: 50vw;
+  white-space: pre-wrap;
+  margin-top: 1vh;
+  font-size: 30px;
+  font-weight: bold;
+}
+#artist-name {
+  font-size: 23px;
+}
+
 ::-webkit-scrollbar {
     width: 20px;
   }
@@ -31,4 +49,16 @@ h3 {
     border-radius: 20px;
     border: 6px solid transparent;
     background-clip: content-box;
+  }
+  @media(max-width: 450px) {
+    #track-image {
+      width: 75px;
+      height: 75px;
+    }
+    #song-name {
+      font-size: 20px;
+    }
+    #artist-name {
+      font-size: 15px;
+    }
   }
