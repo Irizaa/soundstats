@@ -21,7 +21,7 @@ const RangeSelector = () => {
     document.getElementById('mobile-range-selector').addEventListener('change', function() {
       changeRange(this.value)
     })
-  }, [])
+  })
 
   return (
     <>

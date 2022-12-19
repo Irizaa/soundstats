@@ -37,7 +37,7 @@ const TrackList = () => {
         <ul>
           {trackData?.items.map(song => (
             <li id = 'song-box' key = {song.id}>
-              <img id = 'track-image' src = {song.album.images[0].url}></img>
+              <img id = 'track-image' alt = 'album' src = {song.album.images[0].url}></img>
               <div>
                 <p id = 'song-name'>{song.name}</p>
                 <p id = 'artist-name'>{song.artists[0].name}</p>
