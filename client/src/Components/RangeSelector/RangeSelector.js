@@ -14,7 +14,6 @@ const RangeSelector = () => {
     if(urlParams.get('time_range') === null) timeRange = 'short_term'
     document.getElementById(timePeriod).style.color =  '#818589'
     setTimePeriod(timeRange)
-    // window.location = `/results/${window.location.pathname.split('/')[2]}?time_range=${range}`
   }
   useEffect(() => {
 

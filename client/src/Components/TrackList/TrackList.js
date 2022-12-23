@@ -1,12 +1,10 @@
-import {React} from 'react'
-import { useState, useEffect } from 'react'
+import { React, useState, useEffect } from 'react'
 import './TrackList.css'
 import { getTop, setAccessToken } from '../../Utils/Spotify'
 import { useLocation } from 'react-router-dom';
 const TrackList = () => {
 
   const [trackData, setTrackData] = useState(null)
-  const resultType = window.location.pathname.split('/')[2]
   const location = useLocation()
 
   const fetchResults = async (type, range) => {   
@@ -22,6 +20,7 @@ const TrackList = () => {
     document.getElementById('top-songs').scrollTop = 0
     const urlParams = new URLSearchParams(location.search)
     let timeRange = urlParams.get('time_range')
+    const resultType = window.location.pathname.split('/')[2]
     if(urlParams.get('time_range') === null) timeRange = 'short_term'
 
     if(!sessionStorage.getItem(`${timeRange}_${resultType}`)) {
