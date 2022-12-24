@@ -1,6 +1,6 @@
 import { React, useEffect, useState} from 'react'
 import { useLocation } from 'react-router-dom'
-import { getTop, setAccessToken} from '../../Utils/Spotify'
+import { getResultType, getTimePeriod, getTop, setAccessToken} from '../../Utils/Spotify'
 import './ArtistList.css'
 
 const ArtistList = () => {
@@ -18,11 +18,10 @@ const ArtistList = () => {
     useEffect(() => {
         setAccessToken()
         document.getElementById('top-songs').scrollTop = 0
-        const urlParams = new URLSearchParams(location.search)
-        let timeRange = urlParams.get('time_range')
-        const resultType = window.location.pathname.split('/')[2]
-        if(urlParams.get('time_range') === null) timeRange = 'short_term'
-    
+        
+        const timeRange = getTimePeriod()
+        const resultType = getResultType()
+
         if(!sessionStorage.getItem(`${timeRange}_${resultType}`)) {
           fetchResults(resultType, timeRange) 
         }

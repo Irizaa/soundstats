@@ -50,3 +50,14 @@ export const getTop =  (type, range) => {
     })
     )
 }
+export const getTimePeriod = () => {
+    const urlParams = new URLSearchParams(window.location.search)
+    let timeRange = urlParams.get('time_range')
+    if(timeRange === null) {
+        return 'short_term'
+    } 
+    return timeRange
+}
+export const getResultType = () => {
+    return window.location.pathname.split('/')[2]
+}
