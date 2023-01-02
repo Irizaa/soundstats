@@ -2,26 +2,24 @@ import React from 'react'
 import './RangeSelector.css'
 import { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
+import { getTimePeriod } from '../../Utils/Spotify'
 
 const RangeSelector = () => {
-  const [timePeriod, setTimePeriod] = useState("short_term")
+  const [timePeriod, setTimePeriod] = useState(getTimePeriod)
   const navigate = useNavigate()
 
   const changeRange = (range) => {
     navigate(`?time_range=${range}`)
-    const urlParams = new URLSearchParams(window.location.search)
-    let timeRange = urlParams.get('time_range')
-    if(urlParams.get('time_range') === null) timeRange = 'short_term'
     document.getElementById(timePeriod).style.color =  '#818589'
-    setTimePeriod(timeRange)
-    // window.location = `/results/${window.location.pathname.split('/')[2]}?time_range=${range}`
+    setTimePeriod(range)
+
   }
   useEffect(() => {
 
     document.getElementById('mobile-range-selector').addEventListener('change', function() {
       changeRange(this.value)
     })
-  }, [])
+  })
 
   return (
     <>

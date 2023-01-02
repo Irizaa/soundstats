@@ -1,12 +1,10 @@
-import {React} from 'react'
-import { useState, useEffect } from 'react'
+import { React, useState, useEffect } from 'react'
 import './TrackList.css'
-import { getTop, setAccessToken } from '../../Utils/Spotify'
+import { getResultType, getTimePeriod, getTop, setAccessToken } from '../../Utils/Spotify'
 import { useLocation } from 'react-router-dom';
 const TrackList = () => {
 
   const [trackData, setTrackData] = useState(null)
-  const resultType = window.location.pathname.split('/')[2]
   const location = useLocation()
 
   const fetchResults = async (type, range) => {   
@@ -20,10 +18,9 @@ const TrackList = () => {
   useEffect(() => {
     setAccessToken()
     document.getElementById('top-songs').scrollTop = 0
-    const urlParams = new URLSearchParams(location.search)
-    let timeRange = urlParams.get('time_range')
-    if(urlParams.get('time_range') === null) timeRange = 'short_term'
-
+    const timeRange = getTimePeriod()
+    const resultType = getResultType()
+    
     if(!sessionStorage.getItem(`${timeRange}_${resultType}`)) {
       fetchResults(resultType, timeRange) 
     }
@@ -37,7 +34,7 @@ const TrackList = () => {
         <ul>
           {trackData?.items.map(song => (
             <li id = 'song-box' key = {song.id}>
-              <img id = 'track-image' src = {song.album.images[0].url}></img>
+              <img id = 'track-image' alt = 'album' src = {song.album.images[0].url}></img>
               <div>
                 <p id = 'song-name'>{song.name}</p>
                 <p id = 'artist-name'>{song.artists[0].name}</p>
