@@ -32,10 +32,11 @@ const TrackList = () => {
     <div>
       <div id = 'top-songs'>
         <ul>
-          {trackData?.items.map(song => (
+          {trackData?.items.map((song, index) => (
             <li id = 'song-box' key = {song.id}>
               <img id = 'track-image' alt = 'album' src = {song.album.images[0].url}></img>
-              <div>
+              <p id = 'song-index'>{index + 1}</p>
+              <div id = 'song-info'>
                 <p id = 'song-name'>{song.name}</p>
                 <p id = 'artist-name'>{song.artists[0].name}</p>
               </div>

@@ -24,9 +24,9 @@ const Results = () => {
           <h1 className = "tracks-text"><a href="/results/tracks">tracks</a></h1>
           <h2 className = "artists-text"><a href="/results/artists">artists</a></h2><br/>
           <p className = "left-text">your favorite songs of</p>
-          <p className = "right-text">your favorite artists -</p><br/>
+          <p className = "right-text">the ones who got</p><br/>
           <p className = "left-text">past and present.</p>
-          <p className = "right-text">analyzed.</p>
+          <p className = "right-text">you this far.</p>
         </div>
       </>
     )

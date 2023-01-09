@@ -32,11 +32,12 @@ const ArtistList = () => {
         <div>
           <div id = 'top-songs'>
             <ul>
-              {artistData?.items.map(artist => (
-                <li id = 'song-box' key = {artist.id}>
-                  <img id = 'track-image' alt = 'album' src = {artist.images[0].url}></img>
-                  <div>
-                    <p id = 'song-name'>{artist.name}</p>
+              {artistData?.items.map((artist, index) => (
+                <li id = 'artist-box' key = {artist.id}>
+                  <img id = 'artist-image' alt = 'album' src = {artist.images[0].url}></img>
+                  <p id = 'song-index'>{index + 1}</p>
+                  <div id = 'artist-info'>
+                    <p id = 'artist-info-name'>{artist.name}</p>
                   </div>
                 </li>
               ))}

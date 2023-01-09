@@ -1,6 +1,5 @@
 p {
     color: whitesmoke;
-    margin-left: 10vw;
 }
 #top-songs {
     margin-left: 3vw;
@@ -11,9 +10,14 @@ p {
     overflow-y: scroll;
 }
 #song-box {
+  width: 100%;
   display: flex;
   margin-bottom:1vh;
   background: #212121
+}
+#song-info {
+  margin-left: 3vw;
+  margin-top: 4vh;
 }
 #track-image {
   align-items: center;
@@ -23,12 +27,20 @@ p {
 #song-name {
   width: 50vw;
   white-space: pre-wrap;
-  margin-top: 1vh;
   font-size: 30px;
   font-weight: bold;
 }
 #artist-name {
   font-size: 23px;
+  margin-bottom: 20px;
+}
+#song-index {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 6vw;
+  font-size: 35px;
+  background-color: #101010;
 }
 
 ::-webkit-scrollbar {
@@ -52,8 +64,8 @@ p {
   }
   @media(max-width: 450px) {
     #track-image {
-      width: 75px;
-      height: 75px;
+      width: 100px;
+      height: 100px;
     }
     #song-name {
       font-size: 20px;
@@ -61,4 +73,12 @@ p {
     #artist-name {
       font-size: 15px;
     }
+    #song-info {
+      margin-top: 0vh;
+    }
+    #song-index {
+      font-size: 25px;
+      width: 13vw;
+    }
+
   }

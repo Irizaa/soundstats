@@ -1,0 +1,31 @@
+#artist-image {
+    width: 90%;
+}
+#artist-box {
+    width: 25%;
+    display: inline-block;
+    margin-bottom:1vh;
+    background: #212121
+}
+#artist-info {
+    margin: 10px 0px 10px 70px
+}
+#artist-info-name {    
+    white-space: pre-wrap;
+    font-size: 30px;
+    font-weight: bold;
+  }
+@media(max-width: 450px) {
+    #artist-image {
+        width: 100%;
+    }
+    #artist-box {
+        width: 50%;
+    }
+    #artist-info {
+        margin-left: 6px;
+    }
+    #artist-name-2 {
+        font-size: 20px;  
+    }
+}
