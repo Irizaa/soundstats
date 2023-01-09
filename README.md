@@ -1,3 +1,3 @@
 # soundstats
 
-for when you can't wait for your spotify wrapped
+music stats - from past to present.
