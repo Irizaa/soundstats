@@ -1,6 +1,6 @@
 import { React, useState, useEffect } from 'react'
 import './TrackList.css'
-import { getResultType, getTimePeriod, getTop, setAccessToken } from '../../Utils/Spotify'
+import { getResultType, getTimePeriod, getTop, setAccessToken, highlightRange } from '../../Utils/Spotify'
 import { useLocation } from 'react-router-dom';
 const TrackList = () => {
 
@@ -24,7 +24,7 @@ const TrackList = () => {
     if(!sessionStorage.getItem(`${timeRange}_${resultType}`)) {
       fetchResults(resultType, timeRange) 
     }
-    document.getElementById(timeRange).style.color =  'whitesmoke'
+    highlightRange(timeRange)
     setTrackData(JSON.parse(sessionStorage.getItem(`${timeRange}_${resultType}`)))
   }, [location])
 

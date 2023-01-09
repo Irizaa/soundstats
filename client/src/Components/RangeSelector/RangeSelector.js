@@ -10,7 +10,6 @@ const RangeSelector = () => {
 
   const changeRange = (range) => {
     navigate(`?time_range=${range}`)
-    document.getElementById(timePeriod).style.color =  '#818589'
     setTimePeriod(range)
 
   }
