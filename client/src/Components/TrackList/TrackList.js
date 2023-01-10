@@ -1,33 +1,40 @@
 import { React, useState, useEffect } from 'react'
 import './TrackList.css'
-import { getResultType, getTimePeriod, getTop, setAccessToken, highlightRange } from '../../Utils/Spotify'
+import { getResultType, getTimePeriod, getTop, setAccessToken } from '../../Utils/Spotify'
 import { useLocation } from 'react-router-dom';
 const TrackList = () => {
 
+  const [isLoading, setIsLoading] = useState(true)
   const [trackData, setTrackData] = useState(null)
   const location = useLocation()
+  const timeRange = getTimePeriod()
+  const resultType = getResultType()
 
   const fetchResults = async (type, range) => {   
     await getTop(type, range)
     .then(response => {  
       sessionStorage.setItem(`${range}_${type}`, JSON.stringify(response.data))
       setTrackData(JSON.parse(sessionStorage.getItem(`${range}_${type}`)))
+      setIsLoading(false)
     })
     .catch(error => console.log(error))
   }
+
   useEffect(() => {
     setAccessToken()
-    document.getElementById('top-songs').scrollTop = 0
-    const timeRange = getTimePeriod()
-    const resultType = getResultType()
-    
     if(!sessionStorage.getItem(`${timeRange}_${resultType}`)) {
+      setIsLoading(true)
       fetchResults(resultType, timeRange) 
     }
-    highlightRange(timeRange)
     setTrackData(JSON.parse(sessionStorage.getItem(`${timeRange}_${resultType}`)))
-  }, [location])
+  }, [location, timeRange, resultType])
 
+  if (isLoading && !sessionStorage.getItem(`${timeRange}_${resultType}`)) {
+    return (
+        <div class="lds-facebook"><div></div><div></div><div></div></div>
+    );
+  }
+  
   return (
     <div>
       <div id = 'top-songs'>

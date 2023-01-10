@@ -63,12 +63,12 @@ export const getResultType = () => {
 }
 
 export const highlightRange = (timePeriod) => {
-    if(timePeriod == 'short_term') {
+    if(timePeriod === 'short_term') {
         document.getElementById('short_term').style.color = 'whitesmoke'
         document.getElementById('medium_term').style.color = '#818589'
         document.getElementById('long_term').style.color = '#818589'
     }
-    else if (timePeriod == 'medium_term') {
+    else if (timePeriod === 'medium_term') {
         document.getElementById('short_term').style.color = '#818589'
         document.getElementById('medium_term').style.color = 'whitesmoke'
         document.getElementById('long_term').style.color = '#818589'

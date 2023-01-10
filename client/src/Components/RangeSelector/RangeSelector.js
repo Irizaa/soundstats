@@ -2,22 +2,23 @@ import React from 'react'
 import './RangeSelector.css'
 import { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { getTimePeriod } from '../../Utils/Spotify'
+import { getTimePeriod, highlightRange } from '../../Utils/Spotify'
 
 const RangeSelector = () => {
   const [timePeriod, setTimePeriod] = useState(getTimePeriod)
   const navigate = useNavigate()
-
+  const timeRange = getTimePeriod()
   const changeRange = (range) => {
     navigate(`?time_range=${range}`)
     setTimePeriod(range)
 
   }
   useEffect(() => {
-
+    highlightRange(timeRange)
     document.getElementById('mobile-range-selector').addEventListener('change', function() {
       changeRange(this.value)
     })
+
   })
 
   return (
