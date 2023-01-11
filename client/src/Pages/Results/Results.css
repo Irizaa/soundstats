@@ -1,3 +1,15 @@
+.xz {
+    animation: fadeInAnimation ease 2.5s;
+    animation-iteration-count: 1;
+}
+@keyframes fadeInAnimation {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+     }
+}
 .results-video {
     width: 50vw;
     height: 100vh;

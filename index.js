@@ -21,11 +21,11 @@ const clientSecret = process.env.CLIENT_SECRET
 const scope = 'user-top-read%20user-library-read'
 
 app.get("/", (req, res) => {
-    res.send("Hello Worlds!")
+    res.send("Hello World!")
 })
 
 app.get("/login", (req, res) => {
-    res.redirect(`https://accounts.spotify.com/authorize?client_id=${clientID}&response_type=code&redirect_uri=${redirectURI}&state=${state}&scope=${scope}&show_dialog=true`)
+    res.redirect(`https://accounts.spotify.com/authorize?client_id=${clientID}&response_type=code&redirect_uri=${redirectURI}&state=${state}&scope=${scope}`)
 })
 
 app.get("/callback", (req, res) => {
