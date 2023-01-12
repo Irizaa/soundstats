@@ -1,4 +1,4 @@
-.xz {
+#results-page {
     animation: fadeInAnimation ease 2.5s;
     animation-iteration-count: 1;
 }
@@ -15,7 +15,7 @@
     height: 100vh;
     object-fit: cover;
 }
-.results-content {
+#results-content {
     margin-top: 30vh;
     position:absolute;
     width: 100%;
@@ -23,26 +23,26 @@
     top: 0;
     color: whitesmoke;
 }
-.tracks-text {
+#results-tracks-text {
     margin-left: 2vh;
     text-align:left;
     font-size:7vmax;
     margin-top: 30vh;
     display: inline;   
 }
-.artists-text {
+#results-artists-text {
     margin-right: 2vh;
     text-align: right;
     font-size: 7vmax;
     float: right;
     color: whitesmoke;
 }
-.left-text {
+.results-left-text {
     margin-bottom: 0px;
     margin-left: 2vh;
     display: inline;
 }
-.right-text {
+.results-right-text {
     float: right;
     text-align: right;
     margin-right: 2vh;
@@ -50,7 +50,7 @@
 a {
     color: whitesmoke
 }
-.logout {
+#nav-space {
     margin-top: 0vh;
     position:absolute;
     width: 100%;

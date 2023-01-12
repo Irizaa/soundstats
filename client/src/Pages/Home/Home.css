@@ -4,21 +4,19 @@
     overflow: hidden;
 }
 
-.home-video {
+#home-video {
     width: 100vw;
     height: 100vh;
     object-fit: cover;
 }
 
-.home-text {
-
+#home-text {
     font-size:7vmax;
     margin-top: 30vh;
     margin-bottom: 3vh;
 }
 
-.home-content {
-    
+#home-content {
     position: absolute;
     width: 100%;
     height: 100vh;
@@ -30,7 +28,6 @@
 }
 
 .overlay {
-    
     position:absolute;
     width: 100%;
     height: 100%;

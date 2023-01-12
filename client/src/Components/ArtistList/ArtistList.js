@@ -16,21 +16,25 @@ const ArtistList = () => {
         .then(response => {  
           sessionStorage.setItem(`${range}_${type}`, JSON.stringify(response.data))
           setArtistData(JSON.parse(sessionStorage.getItem(`${range}_${type}`)))
-          setIsLoading(true)
+          setIsLoading(false)
         })
         .catch(error => console.log(error))
       }
+
     useEffect(() => {
         setAccessToken()
         if(!sessionStorage.getItem(`${timeRange}_${resultType}`)) {
+          setIsLoading(true)
           fetchResults(resultType, timeRange) 
         }
+        if(!isLoading) document.getElementById('top-songs').scrollTop = 0
         setArtistData(JSON.parse(sessionStorage.getItem(`${timeRange}_${resultType}`)))
-      }, [location, resultType, timeRange])
+
+      }, [location, resultType, timeRange, isLoading])
 
       if (isLoading && !sessionStorage.getItem(`${timeRange}_${resultType}`)) {
         return (
-            <div class="lds-facebook"><div></div><div></div><div></div></div>
+            <div className = 'lds-facebook'><div></div><div></div><div></div></div>
         );
       }
       return (
@@ -51,5 +55,4 @@ const ArtistList = () => {
         </div>
       );
     }
-
 export default ArtistList

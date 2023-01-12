@@ -2,6 +2,7 @@ import { React, useState, useEffect } from 'react'
 import './TrackList.css'
 import { getResultType, getTimePeriod, getTop, setAccessToken } from '../../Utils/Spotify'
 import { useLocation } from 'react-router-dom';
+
 const TrackList = () => {
 
   const [isLoading, setIsLoading] = useState(true)
@@ -26,15 +27,16 @@ const TrackList = () => {
       setIsLoading(true)
       fetchResults(resultType, timeRange) 
     }
+    if(!isLoading) document.getElementById('top-songs').scrollTop = 0
     setTrackData(JSON.parse(sessionStorage.getItem(`${timeRange}_${resultType}`)))
-  }, [location, timeRange, resultType])
+
+  }, [location, timeRange, resultType, isLoading])
 
   if (isLoading && !sessionStorage.getItem(`${timeRange}_${resultType}`)) {
     return (
-        <div class="lds-facebook"><div></div><div></div><div></div></div>
+        <div className = 'lds-facebook'><div></div><div></div><div></div></div>
     );
   }
-  
   return (
     <div>
       <div id = 'top-songs'>
@@ -54,5 +56,4 @@ const TrackList = () => {
     </div>
   );
 }
-
 export default TrackList

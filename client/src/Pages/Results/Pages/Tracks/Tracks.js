@@ -12,7 +12,7 @@ const Tracks = () => {
   }, [])
   
   return (
-    <div className = "tracks-body">
+    <div className = 'top-results-body'>
       <Navbar/>
       <RangeSelector/>
       <TrackList/>

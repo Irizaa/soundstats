@@ -5,7 +5,6 @@ const app = express()
 const port = 3001
 axios.defaults.headers.common['accept-encoding'] = 'null';
 
-
 const stateGenerator = () => {
     const alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/="
     let ret = ""
@@ -19,10 +18,6 @@ const clientID = process.env.CLIENT_ID
 const redirectURI = process.env.REDIRECT_URI
 const clientSecret = process.env.CLIENT_SECRET
 const scope = 'user-top-read%20user-library-read'
-
-app.get("/", (req, res) => {
-    res.send("Hello World!")
-})
 
 app.get("/login", (req, res) => {
     res.redirect(`https://accounts.spotify.com/authorize?client_id=${clientID}&response_type=code&redirect_uri=${redirectURI}&state=${state}&scope=${scope}`)
@@ -82,5 +77,5 @@ app.get('/refresh_token', (req, res) => {
 })
 
 app.listen(port, () => {
-    console.log(`Example app listening on port ${port}!`)
+    console.log(`app listening on port ${port}`)
 })

@@ -25,11 +25,8 @@ export const setAccessToken = () => {
     if(localStorage.getItem('accessToken') == null || localStorage.getItem('refreshToken') == null) {
         window.location.href = 'http://localhost:3000/'
     }
-    
     axios.defaults.headers['Authorization'] = `Bearer ${localStorage.getItem('accessToken')}`
 }
-
-
 
 axios.defaults.baseURL = 'https://api.spotify.com/v1/'
 
