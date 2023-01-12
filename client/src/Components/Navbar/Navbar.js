@@ -1,12 +1,18 @@
 import React, { useEffect } from 'react'
 import { getResultType, logOut } from '../../Utils/Spotify'
 import './Navbar.css'
+import { useNavigate } from 'react-router-dom'
 
 const Navbar = () => {
 
+  const navigate = useNavigate()
+  
+  const changeType = (range) => {
+    navigate(range)
+  }
+
   useEffect(() => {
     const resultType = getResultType()
-
     if (resultType === 'tracks' || resultType === 'artists') {
       document.getElementById(`nav-element-${resultType}`).style.color = 'whitesmoke'
       import('./NavbarNoLogout.css')
@@ -14,17 +20,23 @@ const Navbar = () => {
   }, [])
 
   return (
-      <nav className = 'navbar'>   
-        <div className = 'navbar-links'>
-          <ul>
-            <a id = 'nav-element-title' href='/results'>soundstats</a>
-            <a id = 'nav-element-tracks' href='/results/tracks'>tracks</a>
-            <span id = 'divider'> | </span>
-            <a id = 'nav-element-artists' href='/results/artists'>artists</a>
-            <p id = 'nav-element-logout' onClick = {logOut}>logout</p>
-          </ul>
-        </div>
-      </nav>
+    <nav className = 'navbar'>   
+      <div className = 'navbar-links'>
+        <ul>
+          <li id = 'nav-element-title' onClick={() => {changeType('/results')}}>
+            soundstats
+          </li>
+          <li id = 'nav-element-tracks' onClick={() => {changeType('/results/tracks')}}>
+            tracks
+          </li>
+          <span id = 'divider'> | </span>
+          <li id = 'nav-element-artists' onClick={() => {changeType('/results/artists')}}>
+            artists
+          </li>
+          <p id = 'nav-element-logout' onClick = {logOut}>logout</p>
+        </ul>
+      </div>
+    </nav>
   )
 }
 export default Navbar
