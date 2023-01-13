@@ -36,6 +36,17 @@ export const logOut = () => {
     window.location.href = 'http://localhost:3000'
 }
 
+export const getTopGenres =  (range) => {
+    return (axios({
+        method: 'get',
+        url: `me/top/artists`,
+        params: {
+            limit: 50,
+            time_range: range
+        }
+    })
+    )
+}
 export const getTop =  (type, range) => {
     return (axios({
         method: 'get',

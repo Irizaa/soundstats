@@ -4,6 +4,7 @@ import {BrowserRouter as Router, Routes, Route} from 'react-router-dom'
 import Results from './Pages/Results';
 import Artists from './Pages/Results/Pages/Artists';
 import Tracks from './Pages/Results/Pages/Tracks';
+import Genres from './Pages/Results/Pages/Genres';
 
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
         <Route path = '/results' element = {<Results/>}/>
         <Route path = '/results/tracks' element = {<Tracks/>}/>
         <Route path = '/results/artists' element = {<Artists/>}/>
+        <Route path = '/results/genres' element = {<Genres/>}/>
       </Routes>
     </Router>
   )
