@@ -1,0 +1,46 @@
+#circular-image {
+    width: 150px;
+    height: 150px;
+    border-radius: 10%;
+    margin: 5px 5px 5px 5px;
+    overflow: hidden;
+    background-color: gray;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-items: center;
+}
+#genre-name {
+    width: 50vw;
+    white-space: pre-wrap;
+    font-size: 50px;
+    font-weight: bold;
+}
+#genre-info {
+    margin-left: 1vh;
+    margin-top: 3.5vh;
+}
+#genre-box {
+    width: 100%;
+    display: flex;
+    margin-bottom:1vh;
+    background: #212121
+  }
+@media(max-width: 450px) {
+    #circular-image {
+        width: 150%;
+        height: 150%;
+      }
+      #genre-name {
+        font-size: 20px;
+      }
+      #genre-info {
+        margin-top: 0vh;
+      }
+      #genre-index {
+        font-size: 25px;
+        width: 13vw;
+        display: block;
+      }
+  
+    }
