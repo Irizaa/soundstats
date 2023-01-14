@@ -13,7 +13,12 @@
     color: #818589
 }
 #nav-element-artists {
-    color: #818589
+    color: #818589;
+    margin-right: 0;
+}
+#nav-element-genres {
+    color: #818589;
+    margin-right: 0;
 }
 #nav-element-logout {
     float: right;
@@ -23,7 +28,7 @@
     margin-right: 3vw;
     cursor: pointer;
 }
-#divider {
+.divider {
     font-size: 30px;
 }
 .toggle-button {

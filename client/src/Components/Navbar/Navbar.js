@@ -13,7 +13,7 @@ const Navbar = () => {
 
   useEffect(() => {
     const resultType = getResultType()
-    if (resultType === 'tracks' || resultType === 'artists') {
+    if (resultType === 'tracks' || resultType === 'artists' || resultType == 'genres') {
       document.getElementById(`nav-element-${resultType}`).style.color = 'whitesmoke'
       import('./NavbarNoLogout.css')
     }
@@ -29,9 +29,13 @@ const Navbar = () => {
           <li id = 'nav-element-tracks' onClick={() => {changeType('/results/tracks')}}>
             tracks
           </li>
-          <span id = 'divider'> | </span>
+          <span className = 'divider'> | </span>
           <li id = 'nav-element-artists' onClick={() => {changeType('/results/artists')}}>
             artists
+          </li>
+          <span className = 'divider'> | </span>
+          <li id = 'nav-element-genres' onClick={() => {changeType('/results/genres')}}>
+            genres
           </li>
           <p id = 'nav-element-logout' onClick = {logOut}>logout</p>
         </ul>
