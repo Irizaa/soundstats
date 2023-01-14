@@ -13,7 +13,7 @@ const Navbar = () => {
 
   useEffect(() => {
     const resultType = getResultType()
-    if (resultType === 'tracks' || resultType === 'artists' || resultType == 'genres') {
+    if (resultType === 'tracks' || resultType === 'artists' || resultType === 'genres') {
       document.getElementById(`nav-element-${resultType}`).style.color = 'whitesmoke'
       import('./NavbarNoLogout.css')
     }

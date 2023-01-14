@@ -54,11 +54,10 @@ const GenreList = () => {
             <ul>
               {genreData?.map((genre, index) => (
                 <li id = 'genre-box' key = {genre.genre}>
-                  <p id = 'song-index'>{index + 1}</p>
+                  <p id = 'genre-index'>{index + 1}</p>
                   {genre.images.map((image, index) => (
                     <img id = 'circular-image' alt = 'album' src = {image}></img>
                   ))}
-                  <br></br>
                   <div id = 'genre-info'>
                     <p id = 'genre-name'>{genre.genre}</p>
                   </div>

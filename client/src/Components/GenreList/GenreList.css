@@ -2,15 +2,13 @@
     width: 150px;
     height: 150px;
     border-radius: 10%;
-    margin: 5px 5px 5px 5px;
+    margin: 1px 1px 1px 1px;
     overflow: hidden;
     background-color: gray;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    align-items: center;
+    display: flex;;
 }
 #genre-name {
+    display: inline;
     width: 50vw;
     white-space: pre-wrap;
     font-size: 50px;
@@ -24,23 +22,46 @@
     width: 100%;
     display: flex;
     margin-bottom:1vh;
-    background: #212121
+    background: #212121;
+    flex-wrap: wrap;
+  }
+  #genre-index {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 6vw;
+    font-size: 35px;
+    background-color: #101010;
   }
 @media(max-width: 450px) {
     #circular-image {
-        width: 150%;
-        height: 150%;
-      }
+        width: 100px;
+        height: 100px;
+        text-align: center;
+    }
       #genre-name {
-        font-size: 20px;
+        font-size: 33px;
+        width: 75vw;
+        display: block;
+        text-align: center;
       }
       #genre-info {
         margin-top: 0vh;
+        align-items: center;
+        justify-content: center;
+        
       }
       #genre-index {
         font-size: 25px;
         width: 13vw;
-        display: block;
+        height: 100px;
+      }
+      #genre-box {
+        position: relative;
+        align-items: center;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
       }
   
     }
