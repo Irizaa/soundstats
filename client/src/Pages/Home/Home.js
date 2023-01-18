@@ -2,9 +2,10 @@ import React from 'react'
 import './Home.css'
 import BGVideo from '../../Assets/BGVideo.mp4'
 import button from '../../Assets/spotifybutton.png'
+import { isLoggedIn } from '../../Utils/Spotify'
 
 const Home = () => {
-  
+
   return (
     <>
       <div className = 'overlay'/>

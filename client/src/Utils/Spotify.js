@@ -30,6 +30,8 @@ export const setAccessToken = () => {
 
 axios.defaults.baseURL = 'https://api.spotify.com/v1/'
 
+
+
 export const logOut = () => {
     localStorage.clear()
     sessionStorage.clear()
