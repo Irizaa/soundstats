@@ -19,7 +19,7 @@ const Navbar = () => {
     })
     if (resultType === 'tracks' || resultType === 'artists' || resultType === 'genres') {
       document.getElementById(`nav-element-${resultType}`).style.color = 'whitesmoke'
-      if (window.matchMedia("(max-width: 450px)").matches) {
+      if (window.matchMedia("(max-width: 700px)").matches) {
         document.getElementById('nav-element-logout').style.display = 'none'
     }
     } else {

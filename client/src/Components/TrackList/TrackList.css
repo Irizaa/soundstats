@@ -3,7 +3,7 @@ p {
 }
 #top-songs {
     margin-left: 3vw;
-    width: 95%;
+    width: 97%;
     margin-top: 5vh;
     margin-bottom: 3vh;
     height: 75vh;
@@ -17,7 +17,7 @@ p {
 }
 #song-info {
   margin-left: 3vw;
-  margin-top: 4vh;
+  margin-top: 5vh;
 }
 #track-image {
   align-items: center;
@@ -103,19 +103,22 @@ p {
   @media(max-width: 450px) {
     #top-songs {
       margin-top: 2vh;
+      width: 97%;
     }
     #track-image {
       width: 125px;
       height: 125px;
     }
     #song-name {
-      font-size: 20px;
+      font-size: 25px;
+      width: 44vw;
     }
     #artist-name {
-      font-size: 15px;
+      width: 45vw;
+      font-size: 20px;
     }
     #song-info {
-      margin-top: 0vh;
+      margin-top: 4vh;
     }
     #song-index {
       font-size: 25px;

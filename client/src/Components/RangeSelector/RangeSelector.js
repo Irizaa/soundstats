@@ -29,7 +29,7 @@ const RangeSelector = () => {
         <option value='long_term'>all-time</option>
       </select>
 
-      <nav className = 'navbar'>   
+      <nav className = 'navbar' id = 'range-navbar'>   
         <ul id = 'monitor-range-selector'>
           <li id = 'short_term' onClick={() => {changeRange('short_term')}}>
             last 4 weeks

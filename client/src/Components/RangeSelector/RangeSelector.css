@@ -1,15 +1,15 @@
 #medium_term, #long_term, #short_term {
     color: #818589;
-    text-align: center;
-}
-#short_term {
-    margin-left: 32vw;
 }
 .navbar li {
     margin-right: 2vw;
     display: inline;
     cursor: pointer;
     font-size: 30px;
+}
+#range-navbar {
+    text-align: center;
+    margin-left: 0;
 }
 #mobile-range-selector {
     display: none;
@@ -20,13 +20,12 @@
     width: 100%;
     height: 8vh;
     background: transparent;
-
     color: whitesmoke;
 }
 #mobile-range-selector option {
     color: black;
 }
-@media(max-width: 450px) {
+@media(max-width: 700px) {
     #monitor-range-selector {
         display: none;
     }

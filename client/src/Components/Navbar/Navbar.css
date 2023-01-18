@@ -58,9 +58,9 @@
     margin-top: 10px;
     text-align: center;
     font-size: 28px;
-    width: 30%;
+    width: 34vw;
     height: 8vh;
-    margin-left: 10vw;
+    margin-left: 1vw;
     background: transparent;
     border: 0px solid #4c3c49;
     color: whitesmoke;
@@ -70,7 +70,7 @@
     font-size: 20px;
 }
 /* Mobile navbar */
-@media(max-width: 450px) {
+@media(max-width: 700px) {
     #nav-element-tracks, #nav-element-artists, #nav-element-genres, .divider {
         display: none;
     }
