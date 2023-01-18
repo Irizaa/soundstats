@@ -69,7 +69,7 @@ app.get('/refresh_token', (req, res) => {
         }
     })
     .then(response => {
-        res.send(response)
+        res.send(response.data)
     })
     .catch(error => {
         res.send(error)
