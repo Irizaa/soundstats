@@ -43,7 +43,9 @@ const TrackList = () => {
         <ul>
           {trackData?.items.map((song, index) => (
             <li id = 'song-box' key = {song.id}>
-              <img id = 'track-image' alt = 'album' src = {song.album.images[0].url}></img>
+              <a href = {song.external_urls.spotify} target = "_blank" rel = "noreferrer">
+                <img id = 'track-image' alt = 'album' src = {song.album.images[0].url}></img>
+              </a>
               <p id = 'song-index'>{index + 1}</p>
               <div id = 'song-info'>
                 <p id = 'song-name'>{song.name}</p>

@@ -24,9 +24,9 @@ const RangeSelector = () => {
   return (
     <>
       <select id= 'mobile-range-selector' value={timePeriod}>
-        <option value='short_term'>Past 4 weeks</option>
-        <option value='medium_term'>Past 6 months</option>
-        <option value='long_term'>All-time</option>
+        <option value='short_term'>past 4 weeks</option>
+        <option value='medium_term'>past 6 months</option>
+        <option value='long_term'>all-time</option>
       </select>
 
       <nav className = 'navbar'>   

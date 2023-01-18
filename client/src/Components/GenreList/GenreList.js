@@ -11,6 +11,7 @@ const GenreList = () => {
     const timeRange = getTimePeriod()
 
     let genreCount  = {}
+    const artistURLs = []
     const fetchResults = async (range) => {   
         await getTopGenres(range)
         .then(response => {  
@@ -18,10 +19,12 @@ const GenreList = () => {
           data.forEach(artist  => {
             artist.genres.forEach(genre => {
                 if(!genreCount[genre]) {
-                    genreCount[genre] = {count: 1, images: [artist.images[0].url]}
+                    // genreCount[genre] = {count: 1, images: [artist.images[0].url], artistURL: artist.external_urls.spotify}
+                    genreCount[genre] = {count: 1, images: [{url: artist.images[0].url, artistURL: artist.external_urls.spotify}]}
                 } else {
                     genreCount[genre].count++
-                    genreCount[genre].images.push(artist.images[0].url)
+                    // genreCount[genre].images.push(artist.images[0].url)
+                    genreCount[genre].images.push({url: artist.images[0].url, artistURL: artist.external_urls.spotify})
                 }
             })
           })
@@ -56,7 +59,9 @@ const GenreList = () => {
                 <li id = 'genre-box' key = {genre.genre}>
                   <p id = 'genre-index'>{index + 1}</p>
                   {genre.images.map((image, index) => (
-                    <img id = 'circular-image' alt = 'album' src = {image}></img>
+                    <a href = {image.artistURL} target = "_blank" rel = "noreferrer">
+                      <img id = 'circular-image' alt = 'album' src = {image.url}></img>
+                    </a>
                   ))}
                   <div id = 'genre-info'>
                     <p id = 'genre-name'>{genre.genre}</p>

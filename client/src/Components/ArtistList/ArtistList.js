@@ -43,7 +43,9 @@ const ArtistList = () => {
             <ul>
               {artistData?.items.map((artist, index) => (
                 <li id = 'artist-box' key = {artist.id}>
-                  <img id = 'artist-image' alt = 'album' src = {artist.images[0].url}></img>
+                   <a href = {artist.external_urls.spotify} target = "_blank" rel = "noreferrer">
+                    <img id = 'artist-image' alt = 'album' src = {artist.images[0].url}></img>
+                   </a>
                   <p id = 'song-index'>{index + 1}</p>
                   <div id = 'artist-info'>
                     <p id = 'artist-info-name'>{artist.name}</p>
