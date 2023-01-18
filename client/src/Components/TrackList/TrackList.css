@@ -101,9 +101,12 @@ p {
     background-clip: content-box;
   }
   @media(max-width: 450px) {
+    #top-songs {
+      margin-top: 2vh;
+    }
     #track-image {
-      width: 100px;
-      height: 100px;
+      width: 125px;
+      height: 125px;
     }
     #song-name {
       font-size: 20px;

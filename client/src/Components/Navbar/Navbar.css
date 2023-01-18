@@ -12,6 +12,9 @@
     margin-right: 0;
     color: #818589
 }
+#nav-element-title {
+    display: inline;
+}
 #nav-element-artists {
     color: #818589;
     margin-right: 0;
@@ -47,10 +50,37 @@
     background-color: white;
     border-radius: 10px;
 }
+.mobile-navbar {
+    display: none;
+}
+#nav-selector {
+    display: none;
+    margin-top: 10px;
+    text-align: center;
+    font-size: 28px;
+    width: 30%;
+    height: 8vh;
+    margin-left: 10vw;
+    background: transparent;
+    border: 0px solid #4c3c49;
+    color: whitesmoke;
+}
+#nav-selector option {
+    background-color: #3d3d3d;
+    font-size: 20px;
+}
 /* Mobile navbar */
 @media(max-width: 450px) {
-    #nav-element-tracks, #nav-element-artists, #divider {
+    #nav-element-tracks, #nav-element-artists, #nav-element-genres, .divider {
         display: none;
     }
+    #nav-element-title {
+        margin-left: 3vw;
+    }
+    #nav-element-logout {
+        margin-right: 10vw;
+    }
+    #nav-selector {
+        display: inline-block;
+    }
 }
-

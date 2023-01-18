@@ -1,9 +1,0 @@
-@media(max-width: 450px) {
-    #nav-element-logout {
-        display: none;
-    }
-    #nav-element-tracks, #nav-element-artists, #divider {
-        display: inline
-    }
-}
-

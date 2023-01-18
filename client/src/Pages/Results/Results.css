@@ -26,14 +26,14 @@
 #results-tracks-text {
     margin-left: 2vh;
     text-align:left;
-    font-size:7vmax;
+    font-size:6vmax;
     margin-top: 30vh;
     display: inline;   
 }
 #results-artists-text {
     margin-right: 2vh;
     text-align: right;
-    font-size: 7vmax;
+    font-size: 6vmax;
     float: right;
     color: whitesmoke;
 }
