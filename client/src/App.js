@@ -13,7 +13,6 @@ function App() {
     
     <Router>
       <Routes>
-        {/* <Route path ='/' element = {<Home />}/> */}
         {localStorage.getItem('accessToken') && localStorage.getItem('refreshToken') ? (
         <Route path="*" element = {<Results/>} />
       ) : (
