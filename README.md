@@ -10,3 +10,6 @@ see your favorite songs, artists, and genres throughout your spotify account's l
 <p align = "center">
   <img src = "https://i.imgur.com/ChlIT2T.gif"/>
 </p>
+
+# to run soundstats:
+clone repo --> npm install --> npm run dev
